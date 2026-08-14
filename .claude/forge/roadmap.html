@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>test: the plan</title>
+<style>
+  :root {
+      --amber: #ffaf5f;
+      --blue: #5fafff;
+      --green: #87d787;
+      --yellow: #ffd75f;
+      --red: #ff5f5f;
+      --purple: #d7afff;
+    --ink: #e8e6e3;
+    --quiet: #9b9691;
+    --faint: #4a4643;
+    --page: #16130f;
+    --card: #1f1b16;
+    color-scheme: dark light;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --ink: #241f19; --quiet: #6b645c; --faint: #cfc7bd;
+      --page: #faf7f2; --card: #fff;
+      --amber: #b06a00; --blue: #0b62b8; --green: #2f7d32;
+      --yellow: #8a6a00; --red: #b3261e; --purple: #6f42c1;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 2.5rem 1.25rem 5rem;
+    background: var(--page); color: var(--ink);
+    font: 16px/1.6 ui-monospace, "SF Mono", "Cascadia Mono", Menlo, Consolas, monospace;
+  }
+  main { max-width: 46rem; margin: 0 auto; }
+  .mast { display: flex; align-items: baseline; gap: .75rem; flex-wrap: wrap;
+           border-bottom: 1px solid var(--faint); padding-bottom: 1rem; }
+  .mast h1 { font-size: 1.35rem; margin: 0; letter-spacing: -.01em; }
+  .mark { color: var(--amber); }
+  .mast .tag { color: var(--quiet); font-size: .85rem; }
+  .summary { color: var(--quiet); font-size: .9rem; margin: 1rem 0 2rem; }
+  .summary strong { color: var(--ink); }
+  .pending { color: var(--yellow); }
+
+  .phase {
+    position: relative; background: var(--card);
+    border: 1px solid var(--faint); border-left: 3px solid var(--faint);
+    border-radius: .5rem; padding: 1.1rem 1.25rem; margin: 0 0 1rem;
+  }
+  .phase.done { border-left-color: var(--green); }
+  .phase.now  { border-left-color: var(--amber); }
+  .phase header { display: flex; align-items: center; gap: .7rem; }
+  .phase h2 { font-size: 1rem; margin: 0; flex: 1; }
+  .num { color: var(--quiet); font-variant-numeric: tabular-nums; }
+  .badge { font-size: .72rem; text-transform: uppercase; letter-spacing: .08em;
+            color: var(--quiet); }
+  .done .badge { color: var(--green); }
+  .now .badge { color: var(--amber); }
+  .delivers { color: var(--quiet); margin: .5rem 0 .9rem; font-size: .92rem; }
+
+  .bar { height: 4px; background: var(--faint); border-radius: 2px; overflow: hidden; }
+  .bar span { display: block; height: 100%; background: var(--green); }
+  .count { font-size: .78rem; color: var(--quiet); margin: .4rem 0 0; }
+
+  .steps { list-style: none; margin: .9rem 0 0; padding: 0; }
+  .step { display: grid; grid-template-columns: 1.4rem 1fr; gap: .4rem .5rem;
+           padding: .35rem 0; font-size: .92rem; }
+  .step .mark { color: var(--faint); }
+  .step.built .mark { color: var(--green); }
+  .step.built .text { color: var(--quiet); }
+  .why { grid-column: 2; margin: .2rem 0 0; font-size: .8rem; color: var(--quiet); }
+  .label { color: var(--blue); }
+  .empty { font-size: .85rem; color: var(--quiet); margin: .8rem 0 0; }
+
+  footer { margin-top: 2.5rem; color: var(--faint); font-size: .78rem; }
+</style>
+</head>
+<body>
+<main>
+  <div class="mast">
+    <h1><span class="mark">⚒</span> test</h1>
+    <span class="tag">the whole plan · 4 phases</span>
+  </div>
+
+  <p class="summary">
+    <strong>0 of 0 steps built.</strong>
+    Every step was a question before it was code, and every answer is in
+    <code>.claude/forge/decisions/</code>.
+    <br><span class="pending">This plan has not been accepted yet, nothing is being built.</span>
+  </p>
+
+  
+    <article class="phase later">
+      <header>
+        <span class="num">1</span>
+        <h2>The API that remembers your to-dos</h2>
+        <span class="badge">later</span>
+      </header>
+      <p class="delivers">A FastAPI server on 127.0.0.1 backed by a SQLite file. You can add a to-do and list them back through the interactive docs page, and they survive a restart.</p>
+      <div class="bar" role="img" aria-label="0 of 0 steps built">
+        <span style="width:0%"></span>
+      </div>
+      <p class="count">0 of 0 steps built</p>
+      <p class="empty">Not broken into steps yet. Forge asks about each one before it is written.</p>
+    </article>
+    <article class="phase later">
+      <header>
+        <span class="num">2</span>
+        <h2>A screen you can actually use</h2>
+        <span class="badge">later</span>
+      </header>
+      <p class="delivers">A plain HTML page served by the same app. You type a to-do, press add, and it appears — no docs page, no curl.</p>
+      <div class="bar" role="img" aria-label="0 of 0 steps built">
+        <span style="width:0%"></span>
+      </div>
+      <p class="count">0 of 0 steps built</p>
+      <p class="empty">Not broken into steps yet. Forge asks about each one before it is written.</p>
+    </article>
+    <article class="phase later">
+      <header>
+        <span class="num">3</span>
+        <h2>A to-do list that does the rest</h2>
+        <span class="badge">later</span>
+      </header>
+      <p class="delivers">Tick items done, edit the wording, delete them. This is the point at which it is a real to-do app rather than a list that only grows.</p>
+      <div class="bar" role="img" aria-label="0 of 0 steps built">
+        <span style="width:0%"></span>
+      </div>
+      <p class="count">0 of 0 steps built</p>
+      <p class="empty">Not broken into steps yet. Forge asks about each one before it is written.</p>
+    </article>
+    <article class="phase later">
+      <header>
+        <span class="num">4</span>
+        <h2>Still usable at fifty items</h2>
+        <span class="badge">later</span>
+      </header>
+      <p class="delivers">Filter to what is outstanding, keep newest work where you can see it, and a sane empty state. The polish that decides whether you keep using it.</p>
+      <div class="bar" role="img" aria-label="0 of 0 steps built">
+        <span style="width:0%"></span>
+      </div>
+      <p class="count">0 of 0 steps built</p>
+      <p class="empty">Not broken into steps yet. Forge asks about each one before it is written.</p>
+    </article>
+
+  <footer>
+    Generated by Forge Mentor on 2026-08-14 from
+    <code>.claude/forge/</code>. Regenerated whenever the plan changes, edit
+    the phase files, not this page.
+  </footer>
+</main>
+</body>
+</html>
