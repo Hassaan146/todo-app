@@ -1,0 +1,23 @@
+# The database file. Decision 004 and 014: SQLite lives next to the code on this
+# machine, and this repository is public. Your to-dos never go to GitHub.
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+
+# Local configuration and secrets. Decision 009: values come from the
+# environment, and the file holding them is never committed.
+.env
+.env.*
+!.env.example
+
+# The virtual environment. Decision 012: requirements.txt is what is committed;
+# .venv is rebuilt from it, never shipped.
+.venv/
+venv/
+
+# Python's own build and cache output.
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/

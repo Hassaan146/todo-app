@@ -1,0 +1,14 @@
+# Every version is pinned exactly. Decision 012: this file is what rebuilds the
+# project from nothing, and a range would rebuild something different tomorrow.
+
+# The web framework and the server that runs it.
+fastapi==0.141.1
+uvicorn==0.52.3
+
+# The ORM. Decision 016.
+SQLAlchemy==2.0.52
+
+# Tests. Decision 010 makes them part of finishing every step.
+# httpx2 is what FastAPI's TestClient uses to make requests.
+pytest==9.1.1
+httpx2==2.10.0
