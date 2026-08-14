@@ -1,0 +1,5 @@
+# Forge decision chain, generated, do not edit
+# Each line: <id> <status> <fingerprint> <links-to>
+
+001 decided  732eaf1192154e4c → genesis
+002 decided  b4bd2c03852b86d6 → 732eaf1192154e4c
