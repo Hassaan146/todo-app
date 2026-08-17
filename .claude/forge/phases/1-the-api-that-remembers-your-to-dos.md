@@ -13,4 +13,4 @@ A FastAPI server on 127.0.0.1 backed by a SQLite file. You can add a to-do and l
 
 1. [x] A FastAPI app that starts and answers on 127.0.0.1, with the database file and secrets excluded from git before either exists
 2. [x] The to-dos table, created in the SQLite file when the app starts
-3. [ ] Add a to-do and list them back, through the interactive docs page, surviving a restart
+3. [x] Add a to-do and list them back, through the interactive docs page, surviving a restart

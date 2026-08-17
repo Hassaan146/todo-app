@@ -8,6 +8,11 @@ uvicorn==0.52.3
 # The ORM. Decision 016.
 SQLAlchemy==2.0.52
 
+# Validates every request body before it reaches a route. Decision 025: FastAPI
+# installs it anyway, but the app imports it directly, so it is declared here
+# rather than left to arrive by accident.
+pydantic==2.13.4
+
 # Tests. Decision 010 makes them part of finishing every step.
 # httpx2 is what FastAPI's TestClient uses to make requests.
 pytest==9.1.1
